@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/reports/report.html"},
 		monochrome = true,
 	    tags = {"@appium"},
-		snippets = SnippetType.CAMELCASE,
+		snippets = SnippetType.UNDERSCORE,
 		dryRun = false,
 		strict = false
 		)

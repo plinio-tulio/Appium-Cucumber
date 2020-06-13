@@ -4,12 +4,25 @@
 	<groupId>br.com.automacao</groupId>
 	<artifactId>Appium-Cucumber-Desafio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	 <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 	<dependencies>
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>5.0.4</version>
+			<version>7.3.0</version>
 		</dependency>
 
 		<dependency>
@@ -29,7 +42,6 @@
 			<version>1.2.6</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>

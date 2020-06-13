@@ -5,29 +5,36 @@ import org.openqa.selenium.By;
 import br.com.automacao.appium.BasePage;
 
 public class EstoquePage extends BasePage {
+	
+	By campoMotivo = By.id("br.com.pztec.estoque:id/txt_motivo");
+	By campoReferencia = By.id("br.com.pztec.estoque:id/txt_referencia");
+	By campoQuantidadeEntrada = By.id("br.com.pztec.estoque:id/txt_qtdentrada") ;
+	By campoQuantidadeSaida = By.id("br.com.pztec.estoque:id/txt_qtdsaida");
+	By campoQuantidadeAtual = By.id("br.com.pztec.estoque:id/txt_qtdatual");
+	By botaoSalvar = By.id("br.com.pztec.estoque:id/btn_salvar");
 
 	public void preencherCampoMotivo() {
-		escrever(By.id("br.com.pztec.estoque:id/txt_motivo"), "motivo");
+		escrever(campoMotivo, "motivo");
 	}
 
 	public void preencherCampoReferencia() {
-		escrever(By.id("br.com.pztec.estoque:id/txt_referencia"), "ref");
+		escrever(campoReferencia, "ref");
 	}
 
 	public void preencherCampoEntrada(String entrada) {
-		escrever(By.id("br.com.pztec.estoque:id/txt_qtdentrada"), entrada);
+		escrever(campoQuantidadeEntrada, entrada);
 	}
 
 	public void preencherCampoRetirada(String retirada) {
-		escrever(By.id("br.com.pztec.estoque:id/txt_qtdsaida"), retirada);
+		escrever(campoQuantidadeSaida, retirada);
 	}
 
 	public String obterEstoqueAtual() {
-		return obterTexto(By.id("br.com.pztec.estoque:id/txt_qtdatual"));
+		return obterTexto(campoQuantidadeAtual);
 	}
 
 	public void salvar() {
-		clique(By.id("br.com.pztec.estoque:id/btn_salvar"));
+		clique(botaoSalvar);
 	}
 
 }
