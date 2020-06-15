@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 
 import br.com.automacao.appium.BasePage;
 import br.com.automacao.entity.Produto;
+import br.com.automacao.utils.FakerUtils;
 
 public class RegistrosProdutoPage extends BasePage {
 	
@@ -28,15 +29,16 @@ public class RegistrosProdutoPage extends BasePage {
 	}
 
 	public Produto obterProdutoCadastrado() {
-		Produto produto = new Produto();
-		produto.setCodigo(obterTexto(campoCodigo));
-		produto.setDescricao(obterTexto(campoDescricao));
-		produto.setUnidade(obterTexto(campoUnidade));
-		produto.setQuantidade(new BigDecimal(obterTexto(campoQuantidade)));
-		produto.setValorUnitario(new BigDecimal(obterTexto(campoValorUnitario).replace(",", ".")));
-		produto.setLote(Integer.parseInt(obterTexto(campoLote)));
-		produto.setDataExpiracao(obterTexto(campoDataExpiracao));
-
+		
+		Produto produto = Produto.builder()
+				.descricao(obterTexto(campoDescricao))
+				.codigo(obterTexto(campoCodigo))
+				.unidade(obterTexto(campoUnidade))
+				.quantidade(new BigDecimal(obterTexto(campoQuantidade)))
+				.valorUnitario(new BigDecimal(obterTexto(campoValorUnitario).replace(",", ".")))
+				.lote(Integer.parseInt(obterTexto(campoLote)))
+				.dataExpiracao(obterTexto(campoDataExpiracao))
+				.build();		
 		return produto;
 	}
 

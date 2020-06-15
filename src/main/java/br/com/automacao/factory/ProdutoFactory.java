@@ -8,13 +8,14 @@ import br.com.automacao.utils.FakerUtils;
 public class ProdutoFactory {
 
 	public static Produto getProduto() {
-		Produto produto = new Produto();
-		produto.setDescricao(FakerUtils.gerarNomeAleatorio());
-		produto.setCodigo("1");
-		produto.setUnidade("unidade");
-		produto.setQuantidade(new BigDecimal(100));
-		produto.setValorUnitario(new BigDecimal(10));
-		produto.setLote(100);
+		Produto produto = Produto.builder()
+				.descricao(FakerUtils.gerarNomeAleatorio())
+				.codigo("1")
+				.unidade("unidade")
+				.quantidade(new BigDecimal(100))
+				.valorUnitario(new BigDecimal(10))
+				.lote(100)
+				.build();
 		return produto;
 	}
 
